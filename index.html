@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illumnas Cinema - Homepage</title>
+</head>
+<body>
+    <!-- header -->
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#"><span>Illumnas Cinema</span></a>
+
+            <nav>
+                <ul class="nav">
+                    <li><a href="movies.html">MOVIES</a></li>
+                    <li><a href="showtimes.html">SHOWTIMES</a></li>
+                    <li><a href="booking.html">CHECK BOOKING</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Banner Section with Full Width Images -->
+    <!-- Refer https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
+    <section class="banner-section">
+        <div class="container">
+
+            <div class="mySlides">
+                <a href="#"><img src="images/banner/Dune.jpg" alt="Dune Poster" height="700" width="1400"></a>
+            </div>
+            <div class="mySlides">
+                <a href="#"><img src="images/banner/Free-Guy.jpg" alt="Free Guy Poster" height="700" width="1400"></a>
+            </div>
+            <div class="mySlides">
+                <a href="#"><img src="images/banner/No-Time-To-Die.jpg" alt="No Time To Die Poster" height="700" width="1400"></a>
+            </div>
+            <div class="mySlides">
+                <a href="#"><img src="images/banner/Shang-Chi.jpg" alt="Shang Chi Poster" height="700" width="1400"></a>
+            </div>
+            <div class="mySlides">
+                <a href="#"><img src="images/banner/The-Suicide-Squad.jpg" alt="The Suicide Squad Poster" height="700" width="1400"></a>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+        </div>
+    </section>
+
+    <!-- Now Showing and Coming Soon Movies - Show 4 Movies -->
+    <section class="movies">
+        <div class="container">
+            <p>
+                <!-- JS function showMovies() could be switch case -->
+                <a class="now" onclick="showMovies(0)">Now Showing</a>
+                |
+                <a class="coming" onclick="showMovies(1)">Coming Soon</a>
+            </p>
+
+            <div class="now-showing">
+                <ul>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/Dune.jpg" alt="Dune" height="450" width="300">
+                        </a>                     
+                        <p>Dune</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/Free-Guy.jpg" alt="Free Guy" height="450" width="300">
+                        </a>
+                        <p>Free Guy</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die" height="450" width="300">
+                        </a>                        
+                        <p>No Time To Die</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/Shang-Chi.jpg" alt="Shang-Chi" height="450" width="300">
+                        </a>                        
+                        <p>Shang-Chi</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/The-Suicide-Squad.jpg" alt="The Suicide Squad" height="450" width="300">
+                        </a>                        
+                        <p>The Suicide Squad</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="coming-soon">
+                <ul>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/Dune.jpg" alt="Dune" height="450" width="300">
+                        </a>                        
+                        <p>Dune</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/Free-Guy.jpg" alt="Free Guy" height="450" width="300">
+                        </a>
+                        <p>Free Guy</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die" height="450" width="300">
+                        </a>                        
+                        <p>No Time To Die</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/Shang-Chi.jpg" alt="Shang-Chi" height="450" width="300">
+                        </a>                        
+                        <p>Shang-Chi</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                    <li>
+                        <a class="movie" href="#">
+                            <img src="images/poster/The-Suicide-Squad.jpg" alt="The Suicide Squad" height="450" width="300">
+                        </a>                        
+                        <p>The Suicide Squad</p>
+                        <a class="buy-ticket" href="#">Buy Ticket</a>
+                    </li>
+                </ul>
+            </div>           
+
+            <a href="#">View All Movies &#9755;</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright Reserved @ 2021 Illumnas Cinema</p>
+    </footer>
+</body>
+</html>
