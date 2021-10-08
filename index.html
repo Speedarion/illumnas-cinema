@@ -23,6 +23,8 @@
         </div>
     </div>
 
+    <!-- Can use PHP's Session method to get the movie name that users click on -->
+
     <!-- Banner Section with Full Width Images -->
     <!-- Refer https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp -->
     <section class="banner-section">
@@ -72,7 +74,7 @@
     </section>
 
     <!-- Now Showing and Coming Soon Movies - Show 4 Movies -->
-    <section class="movies">
+    <section class="movies">        
         <div class="container">
             <!-- Refer https://www.geeksforgeeks.org/how-to-call-php-function-on-the-click-of-a-button/ -->
             <form method="POST">
@@ -83,42 +85,34 @@
             <div class="now-showing">
                 <ul>
                     <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/Dune.jpg" alt="Dune" height="450" width="300">
-                        </a>                     
-                        <p>Dune</p>
-                        <form action="movie.php" method="POST">
+                        <form action="movie.php" method="POST"></form>
                             <input type="hidden" name="movie-name" value="Dune">
+                            <input type="image" src="images/poster/Dune.jpg" alt="Dune" height="450" width="300"><br>                         
+                            <p>Dune</p>                       
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
                     </li>
-                    <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/Free-Guy.jpg" alt="Free Guy" height="450" width="300">
-                        </a>
-                        <p>Free Guy</p>
+                    <li>                        
                         <form action="movie.php" method="POST">
                             <input type="hidden" name="movie-name" value="Free Guy">
+                            <input type="image" src="images/poster/Free-Guy.jpg" alt="Free Guy" height="450" width="300"><br>          
+                            <p>Free Guy</p>                            
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
                     </li>
                     <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die" height="450" width="300">
-                        </a>                        
-                        <p>No Time To Die</p>
                         <form action="movie.php" method="POST">
                             <input type="hidden" name="movie-name" value="No Time To Die">
+                            <input type="image" src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die" height="450" width="300"><br>
+                            <p>No Time To Die</p>                        
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
                     </li>
                     <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/Shang-Chi.jpg" alt="Shang-Chi" height="450" width="300">
-                        </a>                        
-                        <p>Shang-Chi</p>
                         <form action="movie.php" method="POST">
-                            <input type="hidden" name="movie-name" value="Shang Chi">
+                            <input type="hidden" name="movie-name" value="Shang Chi">                        
+                            <input type="image" src="images/poster/Shang-Chi.jpg" alt="Shang-Chi" height="450" width="300"><br>                                            
+                            <p>Shang-Chi</p>                        
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
                     </li>                    
@@ -128,45 +122,37 @@
             <div class="coming-soon">
                 <ul>
                     <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/Dune.jpg" alt="Dune" height="450" width="300">
-                        </a>                     
-                        <p>Dune</p>
-                        <form action="movie.php" method="POST">
+                        <form action="movie.php" method="POST"></form>
                             <input type="hidden" name="movie-name" value="Dune">
+                            <input type="image" src="images/poster/Dune.jpg" alt="Dune" height="450" width="300"><br>                         
+                            <p>Dune</p>                       
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
                     </li>
-                    <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/Free-Guy.jpg" alt="Free Guy" height="450" width="300">
-                        </a>
-                        <p>Free Guy</p>
+                    <li>                        
                         <form action="movie.php" method="POST">
                             <input type="hidden" name="movie-name" value="Free Guy">
+                            <input type="image" src="images/poster/Free-Guy.jpg" alt="Free Guy" height="450" width="300"><br>          
+                            <p>Free Guy</p>                            
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
                     </li>
                     <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die" height="450" width="300">
-                        </a>                        
-                        <p>No Time To Die</p>
                         <form action="movie.php" method="POST">
                             <input type="hidden" name="movie-name" value="No Time To Die">
+                            <input type="image" src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die" height="450" width="300"><br>
+                            <p>No Time To Die</p>                        
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
                     </li>
                     <li>
-                        <a class="movie" href="#">
-                            <img src="images/poster/Shang-Chi.jpg" alt="Shang-Chi" height="450" width="300">
-                        </a>                        
-                        <p>Shang-Chi</p>
                         <form action="movie.php" method="POST">
-                            <input type="hidden" name="movie-name" value="Shang Chi">
+                            <input type="hidden" name="movie-name" value="Shang Chi">                        
+                            <input type="image" src="images/poster/Shang-Chi.jpg" alt="Shang-Chi" height="450" width="300"><br>                                            
+                            <p>Shang-Chi</p>                        
                             <input type="submit" name="movie-button" value="Buy Ticket">
                         </form>
-                    </li>        
+                    </li>              
                 </ul>
             </div>           
 
