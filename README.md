@@ -9,7 +9,7 @@ EE4717 web design project to create a movie ticket booking system.
 - [ ] ...
 
 ## SQL Schemas
-* Movies(<ins>MovieID</ins>, Title, Cast, Director, Distributor, ReleaseDate, RunningTime, Language, Subtitles, Genre)
+* Movies(<ins>MovieID</ins>, Title, Description, Cast, Director, Distributor, ReleaseDate, RunningTime, Language, Subtitles, Genre)
 * Showtimes(<ins>ShowID</ins>, *MovieID*, *HallID*, Date, StartTime, EndTime)
 * Halls(<ins>HallID</ins>, Name, TotalSeats)
 * HallSeats(<ins>HallSeatID</ins>, *HallID*, SeatNumber)
