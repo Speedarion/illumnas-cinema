@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illumnas Cinema - Homepage</title>
+    <style>
+        .image{float:left;}
+        .image img{height:350px;
+        width:250px;}
+        .movieblock {margin-bottom:250px}
+        .moviedetails {margin-left: 300px;}
+        section {width:80%;margin:auto}        
+        
+        .topbar{background-color: #333;
+            width:80%;margin:auto;
+            margin-bottom:100px;}
+        .logo {float:left;}
+        /* Add a black background color to the top navigation */
+        .navbar {
+        overflow: hidden;
+        }
+
+        /* Style the links inside the navigation bar */
+        .navbar a {
+        float: right;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        }
+
+        /* Change the color of links on hover */
+        .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+
+        /* Add a color to the active/current link */
+        .navbar a.active {
+        background-color: #99aa04;
+        color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <div class="topbar">
+        <div class="container">
+            <div class="logo">
+                <a class="logoimg" href="index.html"><img src="images/logo.png" width=300 height=100>
+            </div>
+            <div class="navbar">
+                <a href="about.html">ABOUT</a> 
+                <a href="booking.html">CHECK BOOKING</a>
+                <a href="showtimes.html">SHOWTIMES</a>
+                <a href="movies.html">MOVIES</a>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <section class="movielist">
+        <div class="container">
+            <div class = "sitedir">
+                <h4>HOME / <b>MOVIES</b></h4>
+            </div>
+            <br>
+            <form method="POST">
+                <input type="submit" name="button1" value="NOW SHOWING">
+                <input type="submit" name="button2" value="COMING SOON">
+            </form>
+            <div class="movieblock">
+                <div class="image">
+                    <a href="movie_details.html"><img src="images/poster/Dune.jpg" alt="Dune"></a>
+                </div>
+                <div class="moviedetails">
+                    <h1><b>Dune</b><img src="images/pg13.png" width=30 height=30></h1>
+                    <h3><b>Adventure/Sci-Fi | 2 Hr 35 Mins |  English (Subtitles : Chinese)</b></h3>
+                    <p>
+                        A mythic and emotionally charged hero’s journey, “Dune” tells the story of Paul Atreides,
+                        a brilliant and gifted young man born into a great destiny beyond his understanding,
+                        who must travel to the most dangerous planet in the universe to ensure...
+                    </p>
+                    <a href="movie_details.html"><i>Details..</i></a>
+                    <br><br>
+                    <form action="movie.php" method="POST">
+                        <input type="submit" name="movie-button" value="Buy Ticket">
+                    </form>
+
+                </div>
+            </div>
+            <div class="movieblock">
+                <div class="image">
+                    <a href="movie_details.html"><img src="images/poster/Free-Guy.jpg" alt="Free Guy"></a>
+                </div>
+                <div class="moviedetails">
+                    <h1><b>Free Guy</b><img src="images/pg13.png" width=30 height=30></h1>
+                    <h3><b>Action/Comedy | 1 Hr 55 Mins |  English (Subtitles : Chinese)</b></h3>
+                    <p>
+                        In "Free Guy", a bank teller who discovers he is actually a background player in an open-world video game,
+                        decides to become the hero of his own story- one he rewrites himself.
+                        Now in a world where there are no limits,...
+                    </p>
+                    <a href="movie_details.html"><i>Details..</i></a>
+                    <br><br>
+                    <form action="movie.php" method="POST">
+                        <input type="submit" name="movie-button" value="Buy Ticket">
+                    </form>
+
+                </div>
+            </div>
+            <div class="movieblock">
+                <div class="image">
+                    <a href="movie_details.html"><img src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die"></a>
+                </div>
+                <div class="moviedetails">
+                    <h1><b>No Time To Die</b><img src="images/pg13.png" width=30 height=30></h1>
+                    <h3><b>Action/Adventure | 2 Hr 43 Mins |  English (Subtitles : Chinese)</b></h3>
+                    <p>
+                        In No Time To Die, Bond has left active service and is enjoying a tranquil life in Jamaica.
+                        His peace is short-lived when his old friend Felix Leiter from the CIA turns up asking for help.
+                        The mission to rescue a kidnapped scientist turns out to......
+                    </p>
+                    <a href="movie_details.html"><i>Details..</i></a>
+                    <br><br>
+                    <form action="movie.php" method="POST">
+                        <input type="submit" name="movie-button" value="Buy Ticket">
+                    </form>
+
+                </div>
+            </div>
+            <div class="movieblock">
+                <div class="image">
+                    <a href="movie_details.html"><img src="images/poster/Shang-Chi.jpg" alt="Shangchi"></a>
+                </div>
+                <div class="moviedetails">
+                    <h1><b>Marvel Studios' Shang-Chi And The Legend Of The Ten Rings</b><img src="images/pg.png" width=30 height=30></h1>
+                    <h3><b>Action/Adventure/Fantasy | 2 Hr 12 Mins |  English (Subtitles : Chinese)</b></h3>
+                    <p>
+                        Shang-Chi and the Legend of the Ten Rings is the origin story of the newest superhero to the Marvel Cinematic Universe.
+                        Shang-Chi is forced to confront the past he thought he left behind and uncover the mysterious Legend of the Ten Rings that......
+                    </p>
+                    <a href="movie_details.html"><i>Details..</i></a>
+                    <br><br>
+                    <form action="movie.php" method="POST">
+                        <input type="submit" name="movie-button" value="Buy Ticket">
+                    </form>
+
+                </div>
+            </div>
+            <div class="movieblock">
+                <div class="image">
+                    <a href="movie_details.html"><img src="images/poster/The-Suicide-Squad.jpg" alt="Suicide Squad"></a>
+                </div>
+                <div class="moviedetails">
+                    <h1><b>The Suicide Squad</b><img src="images/SG_IMDA_M18.png" width=30 height=30></h1>
+                    <h3><b>Action/Adventure/Comedy | 2 Hr 12 Mins |  English (Subtitles : Chinese)</b></h3>
+                    <p>
+                        The government sends the most dangerous supervillains in the world -- Bloodsport, Peacemaker, King Shark,
+                        Harley Quinn and others -- to the remote, enemy-infused island of Corto Maltese.
+                        Armed with high-tech weapons, they....
+                    </p>
+                    <a href="movie_details.html"><i>Details..</i></a>
+                    <br><br>
+                    <form action="movie.php" method="POST">
+                        <input type="submit" name="movie-button" value="Buy Ticket">
+                    </form>
+
+                </div>
+            </div>
+
+    </section>
+
+    </div>
