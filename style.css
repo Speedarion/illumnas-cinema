@@ -1,0 +1,63 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 1000px;
+    background-color: rgb(66, 65, 65);
+    color: #f2f2f2;
+}
+
+/* ==== HEADER ==== */
+.topbar{background-color: #333;
+    width:80%;
+    margin:auto;
+    margin-bottom:50px;    
+}
+.topbar .container{
+    margin-top: 30px;
+}
+.logo {float:left;}
+a.logoimg img{width: 180px; height: 100px;}
+/* Add a black background color to the top navigation */
+.navbar {
+overflow: hidden;
+height: 100px;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+float: right;
+color: #f2f2f2;
+text-align: center;
+padding: 40px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+background-color: #ddd;
+color: black;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+background-color: #99aa04;
+color: white;
+}
+/* ==== HEADER ==== */
+
+/* ==== FOOTER ==== */
+footer{
+    background-color: #333;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;    
+    padding: 5px;
+}
+/* ==== FOOTER ==== */
+
+/* ==== Main Content ==== */
+.wrapper{
+    width: 80%;
+    margin: auto;
+}
