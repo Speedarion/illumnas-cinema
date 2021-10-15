@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Illumnas Cinema - Homepage</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         .image{float:left;}
         .image img{height:350px;
@@ -12,45 +13,15 @@
         .movieblock {margin-bottom:250px}
         .moviedetails {margin-left: 300px;}
         section {width:80%;margin:auto}        
-        
-        .topbar{background-color: #333;
-            width:80%;margin:auto;
-            margin-bottom:100px;}
-        .logo {float:left;}
-        /* Add a black background color to the top navigation */
-        .navbar {
-        overflow: hidden;
-        }
-
-        /* Style the links inside the navigation bar */
-        .navbar a {
-        float: right;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        }
-
-        /* Change the color of links on hover */
-        .navbar a:hover {
-        background-color: #ddd;
-        color: black;
-        }
-
-        /* Add a color to the active/current link */
-        .navbar a.active {
-        background-color: #99aa04;
-        color: white;
-        }
     </style>
 </head>
 <body>
+    <!-- https://www.w3schools.com/howto/howto_js_topnav.asp -->
     <!-- header -->
     <div class="topbar">
         <div class="container">
             <div class="logo">
-                <a class="logoimg" href="index.html"><img src="images/logo.png" width=300 height=100>
+                <a class="logoimg" href="index.php"><img src="images/logo.png" width=300 height=100></a>
             </div>
             <div class="navbar">
                 <a href="about.html">ABOUT</a> 
@@ -156,7 +127,7 @@
                     <a href="movie_details.html"><img src="images/poster/The-Suicide-Squad.jpg" alt="Suicide Squad"></a>
                 </div>
                 <div class="moviedetails">
-                    <h1><b>The Suicide Squad</b><img src="images/SG_IMDA_M18.png" width=30 height=30></h1>
+                    <h1><b>The Suicide Squad  </b><img src="images/SG_IMDA_M18.png" width=50 height=30></h1>
                     <h3><b>Action/Adventure/Comedy | 2 Hr 12 Mins |  English (Subtitles : Chinese)</b></h3>
                     <p>
                         The government sends the most dangerous supervillains in the world -- Bloodsport, Peacemaker, King Shark,
@@ -171,7 +142,31 @@
 
                 </div>
             </div>
+            <div class="movieblock">
+                <div class="image">
+                    <a href="movie_details.html"><img src="images/poster/The-Suicide-Squad.jpg" alt="Venom"></a>
+                </div>
+                <div class="moviedetails">
+                    <h1><b>Venom: Let There Be Carnage</b><img src="images/pg13.png" width=30 height=30></h1>
+                    <h3><b>Action/Adventure | 1 Hr 37 Mins |  English (Subtitles : Chinese)</b></h3>
+                    <p>
+                        Eddie Brock struggles to adjust to his new life as the host of the alien symbiote Venom,
+                        which grants him super-human abilities in order to be a lethal vigilante.
+                        Brock attempts to ...
+                    </p>
+                    <a href="movie_details.html"><i>Details..</i></a>
+                    <br><br>
+                    <form action="movie.php" method="POST">
+                        <input type="submit" name="movie-button" value="Buy Ticket">
+                    </form>
+
+                </div>
+            </div>
 
     </section>
 
     </div>
+    <?php include "footer.php" ?>
+</body>
+</html>
+
