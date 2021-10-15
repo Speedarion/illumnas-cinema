@@ -1,25 +1,27 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 1000px;
+    min-width: 1200px;
     background-color: rgb(66, 65, 65);
+    background-image: linear-gradient(#2d3436, #d3d3d313);
     color: #f2f2f2;
 }
 
 /* ==== HEADER ==== */
-.topbar{background-color: #333;
-    width:80%;
+.topbar{background-color: #2e2e2e;
+    width:80%;    
+    min-width: 1200px;
     margin:auto;
-    margin-bottom:50px;    
+    margin: 0 150px;  
 }
-.topbar .container{
+/* .topbar .container{
     margin-top: 30px;
-}
+} */
 .logo {float:left;}
 a.logoimg img{width: 180px; height: 100px;}
 /* Add a black background color to the top navigation */
 .navbar {
 overflow: hidden;
-height: 100px;
+height: 100px; /*height of navbar and logoimg should be the same*/
 }
 
 /* Style the links inside the navigation bar */
@@ -47,17 +49,20 @@ color: white;
 
 /* ==== FOOTER ==== */
 footer{
-    background-color: #333;
-    width: 80%;
+    background-color: #2e2e2e;
+    /* width: 80%; */
+    width: 1200px;
     margin: auto;
-    margin-bottom: 20px;
+    margin: 0px 150px 20px 150px;   
     text-align: center;    
-    padding: 5px;
+    padding: 5px 0;
 }
 /* ==== FOOTER ==== */
 
 /* ==== Main Content ==== */
 .wrapper{
-    width: 80%;
-    margin: auto;
+    width: 1200px;    
+    margin: 5px 150px; 
+    
 }
+/* ==== Main Content ==== */
