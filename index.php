@@ -113,12 +113,13 @@
         }
         .movie-blocks ul{
             list-style-type: none;
-            margin-left: 20px;
+            margin-left: 40px;
+            
         }
 
         .movie-blocks li{
-            float: left;
-            margin: 5px 15px 60px 15px;
+            display: inline-block;
+            margin: 5px 15px 5px 15px;
         }
 
         .movie-blocks input[type="image"]{
@@ -173,13 +174,25 @@
             clear: left;
         }
 
-        #view-all {
+        .view-all{
+            margin-bottom: 10px;            
+            padding-right: 0;
+        }
+
+        .view-all a{
+            color: white;
+            font-weight: bold;
+            margin-left: 1050px;
+        }
+        
+        /* #view-all {
             position: absolute;
             color: white;
             font-weight: bold;
             top: 170%;
             right: 11%;
-        }       
+            transform: translateX(-430%);
+        }        */
 
     </style>
 </head>
@@ -203,7 +216,7 @@
                 <div class="mySlides">
                     <img src="images/banner/Free-Guy.jpg" alt="Free-Guy Poster">
                     <form action="movie.php" method="POST">
-                        <input type="hidden" name="movie-name" value="Free Guy">
+                        <input type="hidden" name="movie-name" value="Free-Guy">
                         <input type="submit" class="button" name="movie-button" value="Free Guy">
                     </form>
                 </div>
@@ -217,7 +230,7 @@
                 <div class="mySlides">
                     <img src="images/banner/Shang-Chi.jpg" alt="Shang Chi Poster">
                     <form action="movie.php" method="POST">
-                        <input type="hidden" name="movie-name" value="Shang-Chi">
+                        <input type="hidden" name="movie-name" value="Shang-Chi-and-the-Legend-of-the-Ten-Rings">
                         <input type="submit" class="button" name="movie-button" value="Shang Chi">
                     </form>
                 </div>
@@ -348,7 +361,7 @@
                                     echo "<input type='hidden' name='movie-id' value='".$nowID[$i]."'>";
                                     echo "<input type='image' class='poster' src='images/poster/" .$nowImgs[$i]. ".jpg' alt='" .$nowTitle[$i]. "'><br>";
                                     echo "<p>" .$nowTitle[$i]. "<img src='images/" .$nowRating[$i]. ".webp' alt=" .$nowRating[$i]. "' class='movie-rate'> </p>";
-                                    echo "<input type='submit' class='movie-button' name='movie-button' value='Buy Ticket'";
+                                    echo "<input type='submit' class='movie-button' name='movie-button' value='Buy Ticket'>";
                                     echo "</form>";
                                     echo "</div>";
                                     echo "</li>";
@@ -410,7 +423,7 @@
                                     else{
                                         echo "<p>" .$csTitle[$i]. "<img src='images/" .$csRating[$i]. ".webp' alt=" .$csRating[$i]. "' class='movie-rate'> </p>";
                                     }                                    
-                                    echo "<input type='submit' class='movie-button' name='movie-button' value='Details'";
+                                    echo "<input type='submit' class='movie-button' name='movie-button' value='Details'>";
                                     echo "</form>";
                                     echo "</div>";
                                     echo "</li>";
@@ -418,12 +431,14 @@
                             ?>
                         </ul>
                     </div>                    
-                </div>           
-
-                
+                </div>   
             </div>
         </section>
-        <a href="movies.php" id="view-all">View All Movies &#9755;</a>
+
+        <div class="view-all">
+            <a href="movies.php" id="view-all">View All Movies &#9755;</a>
+        </div>
+        
     </div>    
 
     <?php include "footer.php" ?>
