@@ -13,3 +13,18 @@ CREATE TABLE illumnasMovies
     genre varchar(50),
     rating varchar(10)  
 );
+
+CREATE TABLE illumnasHalls
+(
+    hallID int unsigned not null auto_increment primary key,
+    hallName varchar(50) not null
+);
+
+CREATE TABLE illumnasShowtimes
+(
+    showID int unsigned not null auto_increment primary key,
+    movieID int unsigned not null,
+    hallID int unsigned not null,
+    showDate date ,
+    startTime TIME
+);
