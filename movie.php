@@ -52,6 +52,38 @@
         }
         /* The Modal (background) */
 
+        /* Image Overlay Fade */
+        /* Refer https://www.w3schools.com/howto/howto_css_image_overlay.asp */
+        .container{
+            display: inline-block;
+            position: relative;            
+        }
+        .middle {
+        cursor: pointer;
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        }
+        .container:hover input[type="image"] {
+        opacity: 0.3;
+        }
+        .container:hover .middle {
+        opacity: 1;
+        }
+        .text {
+        background-color: #2e2e2e;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 16px 32px;
+        }
+
+
         /* Links to Previous Pages */
         .links{
             margin-top: 10px;
@@ -68,9 +100,9 @@
         /* Links to Previous Pages */
 
         /* Description */
-        .desc input[type="image"]{
+        /* .desc input[type="image"]{
             display: inline-block;
-        }
+        } */
 
         .movie-rate{
             height: 30px;
@@ -122,6 +154,7 @@
             text-align: justify;
             font-style: italic;
         }
+        /* Description */
     </style>
     
 </head>
@@ -191,7 +224,13 @@
 
             <!-- Refer https://www.w3schools.com/howto/howto_css_modals.asp -->
             <!-- Trigger/Open The Modal -->
-            <input type="image" id="myBtn" src="images/poster/<?php echo $_SESSION['img']; ?>.jpg" height="300" width="220">
+            <div class="container">
+                <input type="image" id="myBtn" src="images/poster/<?php echo $_SESSION['img']; ?>.jpg" height="300" width="220">
+                <div class="middle">
+                    <div class="text">TRAILER</div>
+                </div>
+            </div>
+            
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -286,12 +325,17 @@
         
         // Get the button that opens the modal
         var btn = document.getElementById("myBtn");
+
+        var textBtn = document.getElementsByClassName('text');
         
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
         
         // When the user clicks the button, open the modal 
         btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        textBtn[0].onclick = function() {
           modal.style.display = "block";
         }
         
