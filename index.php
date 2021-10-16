@@ -183,16 +183,8 @@
             color: white;
             font-weight: bold;
             margin-left: 1050px;
-        }
+        }      
         
-        /* #view-all {
-            position: absolute;
-            color: white;
-            font-weight: bold;
-            top: 170%;
-            right: 11%;
-            transform: translateX(-430%);
-        }        */
 
     </style>
 </head>
@@ -209,35 +201,35 @@
                 <div class="mySlides">
                     <img src="images/banner/Dune.jpg" alt="Dune Poster">
                     <form action="movie.php" method="POST">
-                        <input type="hidden" name="movie-name" value="Dune">
+                        <input type="hidden" name="movie-id" value="1">
                         <input type="submit" class="button" name="movie-button" value="Dune">
                     </form>
                 </div>
                 <div class="mySlides">
                     <img src="images/banner/Free-Guy.jpg" alt="Free-Guy Poster">
                     <form action="movie.php" method="POST">
-                        <input type="hidden" name="movie-name" value="Free-Guy">
+                        <input type="hidden" name="movie-id" value="3">
                         <input type="submit" class="button" name="movie-button" value="Free Guy">
                     </form>
                 </div>
                 <div class="mySlides">
                     <img src="images/banner/No-Time-To-Die.jpg" alt="No Time To Die Poster">
                     <form action="movie.php" method="POST">
-                        <input type="hidden" name="movie-name" value="No-Time-To-Die">
+                        <input type="hidden" name="movie-id" value="2">
                         <input type="submit" class="button" name="movie-button" value="No Time To Die">
                     </form>
                 </div>
                 <div class="mySlides">
                     <img src="images/banner/Shang-Chi.jpg" alt="Shang Chi Poster">
                     <form action="movie.php" method="POST">
-                        <input type="hidden" name="movie-name" value="Shang-Chi-and-the-Legend-of-the-Ten-Rings">
-                        <input type="submit" class="button" name="movie-button" value="Shang Chi">
+                        <input type="hidden" name="movie-id" value="5">
+                        <input type="submit" class="button" name="movie-button" value="Shang-Chi and the Legend of Ten Rings">
                     </form>
                 </div>
                 <div class="mySlides">
                     <img src="images/banner/The-Suicide-Squad.jpg" alt="The Suicide Squad Poster">
                     <form action="movie.php" method="POST">
-                        <input type="hidden" name="movie-name" value="The-Suicide-Squad">
+                        <input type="hidden" name="movie-id" value="4">
                         <input type="submit" class="button" name="movie-button" value="The Suicide Squad">
                     </form>
                 </div>
