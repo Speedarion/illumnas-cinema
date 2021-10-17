@@ -11,7 +11,7 @@ EE4717 web design project to create a movie ticket booking system.
 - [ ] Payment Page
 - [ ] Payment Success/Error
 - [ ] Check Booking
-- [ ] About Us
+- [x] About Us
 
 ## Updates
 * Naming convention of the movie image: Example movie No Time To Die -> No-Time-To-Die.jpg
