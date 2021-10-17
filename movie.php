@@ -355,7 +355,7 @@
             modal.style.display = "none";
           }
         }
-        </script>   
+    </script>   
      
 </body>
 </html>
