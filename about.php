@@ -59,7 +59,7 @@
                 At Illumnas Cinema, it's not just about movies - it's a total entertainment experience.
             </p>
             <div class="features">
-                <p><strong>Illumnas Cinema features the following:</sstrong></p>
+                <p><strong>Illumnas Cinema features the following:</strong></p>
                 <ul>
                     <li>6 cinema screens</li>
                     <li>Digital Projectors</li>
