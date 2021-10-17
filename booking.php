@@ -26,7 +26,6 @@
         #booking-id{
             height: 20px;
             vertical-align: bottom;
-            text-transform: uppercase;
         }
         #submit{
             cursor: pointer;
