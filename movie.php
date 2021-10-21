@@ -162,8 +162,7 @@
         .showtable{
             display: block;
             background-color: #696969;
-        }
-        /* TODO: style table!! */
+        }        
         .showtimes table{
             border-spacing: 30px 10px;            
         }
@@ -178,8 +177,7 @@
         .showtimes p{
             font-style: italic;
             font-size: 16px;
-        }
-        /* TODO: style table!! */
+        }        
         .time{
             display: inline-block;
             margin-right: 15px;
@@ -208,6 +206,7 @@
             -webkit-transition: all .4s ease-in-out;
             transition: all .4s ease-in-out;
         }
+        /* Showtimes */
     </style>
     
 </head>
@@ -235,28 +234,30 @@
         include "header.php"; 
         include "dbconnect.php";
         session_start();
-        $_SESSION['movie-id'] = $_POST['movie-id'];
-        $query = "SELECT * FROM illumnasMovies WHERE movieID=" .$_SESSION['movie-id'];
-        $result = mysqli_query($conn, $query);
-        if (mysqli_num_rows($result)>0){
-            while($row=mysqli_fetch_assoc($result)){
-                $_SESSION['title'] = $row['title'];
-                $_SESSION['img'] = format_string($row['title']);
-                $desc = $row['description'];
-                $cast = $row['cast'];
-                $director = $row['director'];
-                $distributor = $row['distributor'];
-                $releaseDate = $row['releaseDate'];
-                $runningTime = format_time($row['runningTime']);
-                $language = $row['language'];
-                $subtitles = $row['subtitles'];
-                $genre = $row['genre'];
-                $rating = $row['rating'];
-                $video = $row['video'];
-
+        if(isset($_POST['movie-id'])){
+            $_SESSION['movie-id'] = $_POST['movie-id'];
+            $query = "SELECT * FROM illumnasMovies WHERE movieID=" .$_SESSION['movie-id'];
+            $result = mysqli_query($conn, $query);
+            if (mysqli_num_rows($result)>0){
+                while($row=mysqli_fetch_assoc($result)){
+                    $_SESSION['title'] = $row['title'];
+                    $_SESSION['img'] = format_string($row['title']);
+                    $_SESSION['desc'] = $row['description'];
+                    $_SESSION['cast'] = $row['cast'];
+                    $_SESSION['director'] = $row['director'];
+                    $_SESSION['distributor'] = $row['distributor'];
+                    $_SESSION['releaseDate'] = $row['releaseDate'];
+                    $_SESSION['runningTime'] = format_time($row['runningTime']);
+                    $_SESSION['language'] = $row['language'];
+                    $_SESSION['subtitles'] = $row['subtitles'];
+                    $_SESSION['genre'] = $row['genre'];
+                    $_SESSION['rating'] = $row['rating'];
+                    $_SESSION['video'] = $row['video'];
+                }
             }
+            $result->free();     
         }
-        $result->free();        
+           
     ?>      
 
     <div class="wrapper">
@@ -270,7 +271,7 @@
                 <?php 
                     echo $_SESSION['title']; 
                     if ($rating != "TBA"){
-                        echo "<img class='movie-rate' src='images/" .$rating. ".webp' alt='" .$rating. "'>";
+                        echo "<img class='movie-rate' src='images/" .$_SESSION['rating']. ".webp' alt='" .$rating. "'>";
                     }
                 ?>               
             </h1>
@@ -291,7 +292,7 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <!-- To Fix: Closing the modal won't stop the video -->
-                    <iframe width="1080" height="600" src='https://www.youtube.com/embed/<?php echo $video; ?>' id="video"></iframe>
+                    <iframe width="1080" height="600" src='https://www.youtube.com/embed/<?php echo $_SESSION['video']; ?>' id="video"></iframe>
                 </div>
             </div>
 
@@ -301,25 +302,25 @@
                 <table>
                     <tr>
                         <td rowspan="2">CAST:</td>
-                        <td rowspan="2"><?php echo $cast; ?></td>
+                        <td rowspan="2"><?php echo $_SESSION['cast']; ?></td>
                         <td>RELEASE DATE:</td>
-                        <td><?php echo $releaseDate; ?></td>
+                        <td><?php echo $_SESSION['releaseDate']; ?></td>
                     </tr>
                     <tr>                        
                         <td style="padding-left: 40px;">RUNNING TIME:</td>
-                        <td><?php echo $runningTime; ?></td>
+                        <td><?php echo $_SESSION['runningTime']; ?></td>
                     </tr>
                     <tr>
                         <td>DIRECTOR:</td>
-                        <td><?php echo $director; ?></td>
+                        <td><?php echo $_SESSION['director']; ?></td>
                         <td>LANGUAGE:</td>
-                        <td><?php echo $language; ?> (Subtitles: <?php echo $subtitles; ?>)</td>
+                        <td><?php echo $_SESSION['language']; ?> (Subtitles: <?php echo $_SESSION['subtitles']; ?>)</td>
                     </tr>
                     <tr>
                         <td>DISTRIBUTOR:</td>
-                        <td><?php echo $distributor; ?></td>
+                        <td><?php echo $_SESSION['distributor']; ?></td>
                         <td>GENRE:</td>
-                        <td><?php echo $genre; ?></td>
+                        <td><?php echo $_SESSION['genre']; ?></td>
                     </tr>
                 </table>
                 
@@ -327,7 +328,7 @@
         </div>
 
         <div class="summary">
-            <p><?php echo $desc; ?></p>
+            <p><?php echo $_SESSION['desc']; ?></p>
         </div>
     
         <?php 
@@ -338,7 +339,7 @@
             $day2 = date('Y-m-d', strtotime($today. " +2 days")); //the day after tomorrow
             $days = array($today, $day1, $day2);           
             
-            if (strtotime($today)>strtotime($releaseDate)){ // Now showing
+            if (strtotime($today)>strtotime($_SESSION['releaseDate'])){ // Now showing
                 echo "<div class='showtimes'>";
                 echo "<h2 id='showtimes'>SHOWTIMES</h2>";
                 echo "<div class='showtable'>";
@@ -365,7 +366,7 @@
                     if (mysqli_num_rows($result)>0){                        
                         while($row = mysqli_fetch_assoc($result)){
                             echo "<div class='time'>";
-                            echo "<form action='seating_plan.php'>";
+                            echo "<form action='seating_plan.php' method='POST'>";
                             echo "<input type='hidden' name='show-id' value='" .$row['showID']. "'>";                            
                             echo "<input type='hidden' name='show-date' value='" .$row['showDate']. "'>";
                             echo "<input type='hidden' name='hall' value='" .$row['hallName']. "'>";
