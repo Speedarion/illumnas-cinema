@@ -5,7 +5,7 @@ EE4717 web design project to create a movie ticket booking system.
 - [x] Homepage
 - [ ] Movies
 - [ ] Showtimes
-- [ ] Movie Details
+- [x] Movie Details
 - [ ] Seating Plan
 - [ ] F&B (?)
 - [ ] Payment Page
@@ -20,6 +20,7 @@ EE4717 web design project to create a movie ticket booking system.
 * The navbar color is set to #2e2e2e
 * Movie details page requires $_POST['movie-id'] to retrieve movie information from database
 * Movie detail store 3 session variables, $_SESSION['movie-id'], $_SESSION['title'], $_SESSION['img']
+* seating_plan.php requires $_POST['show-id'], $_POST['show-date'], $_POST['hall'], $_POST['time-btn'] (store showtime i.e. 09:00)
 
 ## SQL Schemas
 * Movies(<ins>MovieID</ins>, Title, Description, Cast, Director, Distributor, ReleaseDate, RunningTime, Language, Subtitles, Genre， Rating)

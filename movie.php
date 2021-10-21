@@ -83,7 +83,6 @@
         padding: 16px 32px;
         }
 
-
         /* Links to Previous Pages */
         .links{
             margin-top: 10px;
@@ -155,6 +154,60 @@
             font-style: italic;
         }
         /* Description */
+
+        /* Showtimes */
+        .showtimes{
+            margin-bottom: 20px;
+        }
+        .showtable{
+            display: block;
+            background-color: #696969;
+        }
+        /* TODO: style table!! */
+        .showtimes table{
+            border-spacing: 30px 10px;            
+        }
+        .showtimes th{
+            font-size: 25px;
+        }
+        .showtimes td:nth-child(1){
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold;
+        }
+        .showtimes p{
+            font-style: italic;
+            font-size: 16px;
+        }
+        /* TODO: style table!! */
+        .time{
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .time-btn{
+            background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+            box-shadow: 0 4px 10px 0 rgba(45, 54, 65, 0.75);
+            cursor: pointer;
+            text-align: center;
+            color: white;
+            padding: 10%;
+            width: 60px;
+            height: 40px;          
+            font-size: 16px;
+            font-weight: 400;        
+            border: none;
+            background-size: 300% 100%;
+            border-radius: 20px;            
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
+        .time-btn:hover{
+            background-position: 100% 0;        
+            -o-transition: all .4s ease-in-out;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+        }
     </style>
     
 </head>
@@ -199,11 +252,11 @@
                 $subtitles = $row['subtitles'];
                 $genre = $row['genre'];
                 $rating = $row['rating'];
+                $video = $row['video'];
 
             }
         }
-        $result->free();
-        $conn->close();
+        $result->free();        
     ?>      
 
     <div class="wrapper">
@@ -238,7 +291,7 @@
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <!-- To Fix: Closing the modal won't stop the video -->
-                    <iframe width="1080" height="600" src="https://www.youtube.com/embed/8g18jFHCLXk" id="video"></iframe>
+                    <iframe width="1080" height="600" src='https://www.youtube.com/embed/<?php echo $video; ?>' id="video"></iframe>
                 </div>
             </div>
 
@@ -276,9 +329,66 @@
         <div class="summary">
             <p><?php echo $desc; ?></p>
         </div>
+    
+        <?php 
+            //  YYYY-MM-DD dates
+            $today = "2021-11-01";
+            // $today = date('Y-m-d');
+            $day1 = date('Y-m-d', strtotime($today. " +1 day")); //tomorrow
+            $day2 = date('Y-m-d', strtotime($today. " +2 days")); //the day after tomorrow
+            $days = array($today, $day1, $day2);           
+            
+            if (strtotime($today)>strtotime($releaseDate)){ // Now showing
+                echo "<div class='showtimes'>";
+                echo "<h2 id='showtimes'>SHOWTIMES</h2>";
+                echo "<div class='showtable'>";
+                echo "<table>";
+                echo "<tr>
+                        <th>DATE</th>
+                        <th align='left'>TIMING</th>
+                      </tr>";
+                // loop array $days
+                for($i=0;$i<count($days);$i++){
+                    echo "<tr>";
+                    if ($i == 0){
+                        echo "<td>TODAY <br>" .$days[$i]. "</td>"; 
+                    }
+                    else{
+                        $dayofweek = date('D', strtotime($days[$i])); //get weekday
+                        echo "<td>$dayofweek <br> " .$days[$i]. "</td>";
+                    }
+
+                    $query = "SELECT illumnasShowtimes.showID, illumnasShowtimes.startTime, illumnasHalls.hallName, illumnasShowtimes.showDate FROM illumnasShowtimes, illumnasHalls WHERE illumnasShowtimes.hallID=illumnasHalls.hallID AND movieID=" .$_SESSION['movie-id']. " AND showDate = '" .$days[$i]. "'";
+                    $result = mysqli_query($conn, $query);
+                    echo "<td>";                    
+                    echo mysqli_error($conn);
+                    if (mysqli_num_rows($result)>0){                        
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo "<div class='time'>";
+                            echo "<form action='seating_plan.php'>";
+                            echo "<input type='hidden' name='show-id' value='" .$row['showID']. "'>";                            
+                            echo "<input type='hidden' name='show-date' value='" .$row['showDate']. "'>";
+                            echo "<input type='hidden' name='hall' value='" .$row['hallName']. "'>";
+                            $time = date('H:i', strtotime($row['startTime']));
+                            echo "<input type='submit' class='time-btn' name='time-btn' value='" .$time. "'>";                        
+                            echo "</form>";
+                            echo "</div>";
+                        }                      
+                    }
+                    else{
+                        echo "<p class='empty'> No showtimes available </p>";
+                    }
+                    echo "</td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
+                echo "</div>";
+            }            
+        ?>
 
         <!-- <div class="showtimes">
-            <h1 id="showtimes">SHOWTIMES</h1>
+            <h2 id="showtimes">SHOWTIMES</h2>
 
             <table id="showtimes-table">
                 <tr>

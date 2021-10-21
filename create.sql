@@ -11,7 +11,8 @@ CREATE TABLE illumnasMovies
     language varchar(50),
     subtitles varchar(50),
     genre varchar(50),
-    rating varchar(10)  
+    rating varchar(10),
+    video varchar(20)  
 );
 
 CREATE TABLE illumnasHalls
