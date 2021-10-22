@@ -5,8 +5,8 @@
             <a class="logoimg" href="index.php"><img src="images/logo.png"></a>
         </div>
         <div class="navbar">
-            <a href="about.html">ABOUT</a> 
-            <a href="booking.html">CHECK BOOKING</a>
+            <a href="about.php">ABOUT</a> 
+            <a href="booking.php">CHECK BOOKING</a>
             <a href="showtimes.php">SHOWTIMES</a>
             <a href="movies.php">MOVIES</a>
         </div>
