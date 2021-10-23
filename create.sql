@@ -29,3 +29,12 @@ CREATE TABLE illumnasShowtimes
     showDate date ,
     startTime TIME
 );
+
+CREATE TABLE illumnasSeats
+(
+    seatID int unsigned not null auto_increment primary key,
+    hallID int unsigned not null,
+    showID int unsigned not null,
+    bookingID int unsigned not null,
+    seat varchar(10)
+)
