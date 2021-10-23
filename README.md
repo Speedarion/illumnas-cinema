@@ -3,8 +3,8 @@ EE4717 web design project to create a movie ticket booking system.
 
 ## Task List
 - [x] Homepage
-- [ ] Movies
-- [ ] Showtimes
+- [x] Movies
+- [x] Showtimes
 - [x] Movie Details
 - [x] Seating Plan
 - [ ] Payment Page
