@@ -359,7 +359,7 @@
                         echo "<td>$dayofweek <br> " .$days[$i]. "</td>";
                     }
 
-                    $query = "SELECT illumnasShowtimes.showID, illumnasShowtimes.startTime, illumnasHalls.hallName, illumnasShowtimes.showDate FROM illumnasShowtimes, illumnasHalls WHERE illumnasShowtimes.hallID=illumnasHalls.hallID AND movieID=" .$_SESSION['movie-id']. " AND showDate = '" .$days[$i]. "' ORDER BY showDate";
+                    $query = "SELECT illumnasShowtimes.showID, illumnasShowtimes.startTime, illumnasHalls.hallName, illumnasShowtimes.showDate FROM illumnasShowtimes, illumnasHalls WHERE illumnasShowtimes.hallID=illumnasHalls.hallID AND movieID=" .$_SESSION['movie-id']. " AND showDate = '" .$days[$i]. "' ORDER BY showTime ASC";
                     $result = mysqli_query($conn, $query);
                     echo "<td>";                    
                     echo mysqli_error($conn);
