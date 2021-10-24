@@ -37,4 +37,30 @@ CREATE TABLE illumnasSeats
     showID int unsigned not null,
     bookingID int unsigned not null,
     seat varchar(10)
-)
+);
+
+
+CREATE TABLE illumnasPrice
+(
+    ticketType varchar(10) not null primary key,
+    ticketPrice int unsigned not null
+);
+
+CREATE TABLE illumnasBooking
+(
+    bookingID varchar(10) not null primary key,
+    showID int unsigned not null,
+    numSeats int unsigned not null,
+    bookingTime timestamp not null default current_timestamp on update current_timestamp
+);
+
+CREATE TABLE illumnasPayment
+(
+    paymentID int unsigned not null auto_increment primary key,
+    bookingID varchar(10) not null,
+    amountPaid float unsigned not null,
+    customerName varchar(100) not null,
+    customerEmail varchar(100) not null,
+    customerPhone int unsigned not null,
+    paymentType varchar(16) not null
+);
