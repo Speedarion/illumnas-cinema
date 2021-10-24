@@ -370,6 +370,7 @@
                             echo "<input type='hidden' name='show-id' value='" .$row['showID']. "'>";                            
                             echo "<input type='hidden' name='show-date' value='" .$row['showDate']. "'>";
                             echo "<input type='hidden' name='hall' value='" .$row['hallName']. "'>";
+                            echo "<input type='hidden' name='movie-id' value='" .$_SESSION['movie-id']. "'>";
                             $time = date('H:i', strtotime($row['startTime']));
                             echo "<input type='submit' class='time-btn' name='time-btn' value='" .$time. "'>";                        
                             echo "</form>";
@@ -386,7 +387,10 @@
                 echo "</div>";
                 echo "</div>";
             }            
+            // var_dump($_SESSION); //for debug
         ?>
+
+        
 
         <!-- <div class="showtimes">
             <h2 id="showtimes">SHOWTIMES</h2>

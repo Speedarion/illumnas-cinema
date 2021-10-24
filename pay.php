@@ -4,5 +4,6 @@ $_POST['empty']: array of selected seats -->
 
 <?php
 var_dump($_POST);
+session_destroy();
 ?>
 

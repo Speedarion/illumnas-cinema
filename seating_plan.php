@@ -1,3 +1,7 @@
+<?php 
+    session_start();    
+    // var_dump($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -189,14 +193,57 @@
     </style>
 </head>
 <body>
-    <?php 
+    <?php         
         include 'header.php'; 
-        session_start();    
+        include 'dbconnect.php';
+
+        function format_string($title){
+            $imgs = str_replace(": ", "-", $title);
+            $imgs = str_replace(" ", "-", $imgs);                        
+            $imgs = str_replace("'", "", $imgs);
+            return $imgs;
+        }
+
+        function format_time($runningTime){
+            $hr = floor($runningTime/60);
+            $min = $runningTime%60;            
+            if($hr==0 and $min==0){
+                $res = "NA";
+            }
+            else{
+                $res = "$hr Hr $min Mins";
+            }
+            return $res;
+        }
+        
         if(isset($_POST['time-btn'])){
+            // var_dump($_POST);
             $_SESSION['show-id'] = $_POST['show-id'];
             $_SESSION['show-date'] = $_POST['show-date'];
             $_SESSION['hall'] = $_POST['hall'];
             $_SESSION['time'] = $_POST['time-btn'];
+            $_SESSION['movie-id'] = $_POST['movie-id'];    
+            $query = "SELECT * FROM illumnasMovies WHERE movieID=" .$_SESSION['movie-id'];
+            $result = mysqli_query($conn, $query);            
+            if (mysqli_num_rows($result)>0){
+                
+                while($row=mysqli_fetch_assoc($result)){
+                    $_SESSION['title'] = $row['title'];
+                    $_SESSION['img'] = format_string($row['title']);
+                    $_SESSION['desc'] = $row['description'];
+                    $_SESSION['cast'] = $row['cast'];
+                    $_SESSION['director'] = $row['director'];
+                    $_SESSION['distributor'] = $row['distributor'];
+                    $_SESSION['releaseDate'] = $row['releaseDate'];
+                    $_SESSION['runningTime'] = format_time($row['runningTime']);
+                    $_SESSION['language'] = $row['language'];
+                    $_SESSION['subtitles'] = $row['subtitles'];
+                    $_SESSION['genre'] = $row['genre'];
+                    $_SESSION['rating'] = $row['rating'];
+                    $_SESSION['video'] = $row['video'];
+                }
+            }
+            $result->free();     
         }
     ?>
 

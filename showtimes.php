@@ -242,7 +242,8 @@
                             $showDate = $showtimeData[4];
                             echo "<form action='seating_plan.php' method='POST'>";
                             for($j=0;$j<count($startTime);$j++){
-                                    echo "<input type='hidden' name='show-id' value='" .$showID[$i]. "'>";                            
+                                    echo "<input type='hidden' name='show-id' value='" .$showID[$i]. "'>";  
+                                    echo "<input type='hidden' name='movie-id' value='" .$nowID[$i]. "'>";                          
                                     echo "<input type='hidden' name='show-date' value='" .$showDate[$i]. "'>";
                                     echo "<input type='hidden' name='hall' value='" .$hallName[$i]. "'>";
                                     $time = date('H:i', strtotime($startTime[$j]));
