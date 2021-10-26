@@ -2,11 +2,11 @@
 $_POST['num-kid']: number of kid tickets
 $_POST['empty']: array of selected seats -->
 <?php
-$_SESSION['num-adult'] = $_POST['num-adult'];
-$_SESSION['num-kid'] = $_POST['num-kid'] ;
-$_SESSION['empty'] = $_POST['empty'];
+    session_start();        
+    $_SESSION['num-adult'] = $_POST['num-adult'];
+    $_SESSION['num-kid'] = $_POST['num-kid'] ;
+    $_SESSION['empty'] = $_POST['empty'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,7 +154,7 @@ $_SESSION['empty'] = $_POST['empty'];
   
     <?php 
         include "header.php" ;
-        session_start();
+        session_start();       
     ?>
     <!-- https://www.w3schools.com/howto/howto_js_topnav.asp -->
     <!-- header -->
@@ -303,6 +303,7 @@ $_SESSION['empty'] = $_POST['empty'];
                             <label for="cc">Credit Card</label>
                             <input type="radio" id="online" name="payment" value="online" required>
                             <label for="ob">Online Banking</label><br>
+                            <input type="hidden"  name="totalAmountPaid" value="<?php echo $totaladultprice+$totalchildprice ?>">
                             <br><br>
                             <div class="buttons";>
                             <button id='button' type="button" class="link-btn" onclick="location.href='http://192.168.56.2/f32ee/illumnas-cinema/seating_plan.php'">BACK</button>
