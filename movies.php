@@ -93,6 +93,19 @@
             color: #fff;
             text-decoration: none;
           }
+        #scrollToTopBtn {
+        background-color: #696969;
+        width:200px;
+        border: solid 3px black;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 40px;
+        position:relative;
+        bottom: 100px;
+        right:-1000px; 
+        }
+ 
     </style>
 </head>
 <body>
@@ -414,10 +427,25 @@
             </div>
 
         </section>
+        <div>
+            <button id="scrollToTopBtn">Back to Top ☝️</button>
+        </div>
     </div>
+    
     <?php include "footer.php" ?>
     <script>
     // Movies Block
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        var rootElement = document.documentElement;
+
+        function scrollToTop() {
+        // Scroll to top logic
+        rootElement.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+        }
+        scrollToTopBtn.addEventListener("click", scrollToTop);
         const nowShowing = document.getElementById("now-showing");
         const comingSoon = document.getElementById("coming-soon");
         nowShowing.style.display = "block";
