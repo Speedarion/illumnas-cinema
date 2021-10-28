@@ -30,6 +30,7 @@
             background-color: #2e2e2e;
             margin-right: 740px;
             padding: 10px 5px;
+            border:solid 1px yellow;
         }
 
         .status-button{
@@ -39,6 +40,10 @@
             color: white;
             font-weight: bold;
             font-size: 30px;           
+        }
+        .status-button:hover{
+            background-color: #ddd;
+            color: black;
         }
         .wrapper{
         width: 80%;    

@@ -270,7 +270,7 @@
             <h1 id="title">
                 <?php 
                     echo $_SESSION['title']; 
-                    if ($rating != "TBA"){
+                    if ($_SESSION['rating'] != "TBA"){
                         echo "<img class='movie-rate' src='images/" .$_SESSION['rating']. ".webp' alt='" .$rating. "'>";
                     }
                 ?>               

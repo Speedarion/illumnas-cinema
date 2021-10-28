@@ -292,12 +292,21 @@ $_POST['empty']: array of selected seats -->
                 <div class="form">
                     <div class="entry">
                         <form method="post" action="pay_status.php">
-                            <label for="name">*Name: </label>
-                            <input type="text" name="name" id="name" placeholder="Enter your name here" required><br><br>
-                            <label for="name">*E-mail: </label>
-                            <input type="email" name="email" id="email" placeholder="Enter your Email-ID here" required><br><br>
-                            <label for="name">*Mobile No: </label>
-                            <input type="tel" name="mobilenum" id="mobilenum" placeholder="Enter your mobile number"><br><br>
+                            <div>
+                                <label for="name">*Name: </label>
+                                <input type="text" name="name" id="name" placeholder="Enter your name here" onfocusout="validate('Name')" required>
+                                <br><small></small><br>
+                            </div>
+                            <div>       
+                                <label for="name">*E-mail: </label>
+                                <input type="email" name="email" id="email" placeholder="Enter your Email here" onfocusout="validate('email')" required>
+                                <br><small></small><br>
+                            </div>
+                            <div>
+                                <label for="name">*Mobile No: </label>
+                                <input type="tel" name="mobilenum" id="mobilenum" placeholder="Enter your mobile number" onfocusout="validate('mobilenum')" required>
+                                <br><small></small><br>
+                            </div>
                             <label for="name" id="payment">*Payment Type: </label>
                             <input type="radio" id="creditcard" name="payment" value="credit" required>
                             <label for="cc">Credit Card</label>
@@ -307,7 +316,7 @@ $_POST['empty']: array of selected seats -->
                             <br><br>
                             <div class="buttons";>
                             <button id='button' type="button" class="link-btn" onclick="location.href='http://192.168.56.2/f32ee/illumnas-cinema/seating_plan.php'">BACK</button>
-					        <input type="submit" id='submit' name='submit' class="link-btn" value="MAKE PAYMENT"><br><br>
+					        <input type="submit" id='submit' name='submit' class="link-btn" value="MAKE PAYMENT" onclick="return finalValidate()"><br><br>
                             </div>
                         </form>
                     </div>
@@ -317,6 +326,10 @@ $_POST['empty']: array of selected seats -->
             </div>
     </section>
     </div>
+    <script type="text/javascript" src="validateForm.js"></script>
+    <script type="text/javascript">
+        validate();
+    </script>
     <br>
     <br>
     <?php include "footer.php" ?>
