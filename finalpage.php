@@ -83,75 +83,7 @@ text-decoration: none;
     <div class="wrapper">
         <section>
             <?php
-            if ($_POST['status']=='SUCCESS'){
-                //calculate total number of tix
-                $totalTickets = $_SESSION['num-adult']+ $_SESSION['num-kid'];
-                //prepare string of seat numbers
-                $seats = array();
-                foreach($_SESSION['empty'] as $arr){
-                    array_push($seats,$arr);
-                    }
-                $seatsList = join(",",$seats);
-                //insert details into illumnasSeats
-                //get corresponding hallID (using showID) first since it is not passed as session variables
-                include 'dbconnect.php';
-                $query = "SELECT hallID FROM illumnasShowtimes WHERE showID = ".$_SESSION['show-id'];
-                $result = mysqli_query($conn, $query);
-            
-                $hallID = array();
-                if(mysqli_num_rows($result)>0){
-                    while($row=mysqli_fetch_assoc($result)){
-                        $hallID[] = $row['hallID'];
-                    }
-                }
-                //insert into illumnasSeats
-                foreach($_SESSION['empty'] as $seat) {
-                    $query = "INSERT INTO illumnasSeats( hallID,showID,bookingID,seat) VALUES ('$hallID[0]','{$_SESSION['show-id']}','{$_SESSION['bookingID']}','$seat')";
-                    $result = mysqli_query($conn, $query);
-                    if (!$result){
-                        echo "Insert 1 failed";
-                    }
-                }
-                //insert into illumnasBooking
-                echo "".$_SESSION['bookingID']."<br>";
-                echo "".$_SESSION['show-id']."<br>";
-                echo $totalTickets;
-                $query = "INSERT INTO  illumnasBooking (bookingID,showID,numSeats) VALUES ('{$_SESSION['bookingID']}','{$_SESSION['show-id']}','$totalTickets')";
-                $result = mysqli_query($conn, $query);
-                if (!$result){
-                    echo "Insert 2 failed";
-                }
-
-                //insert into illumnasPayment
-                $query = "INSERT INTO  illumnasPayment (bookingID,amountPaid,customerName,customerEmail,customerPhone,paymentType) VALUES ('{$_SESSION['bookingID']}',
-                '{$_SESSION['totalAmountPaid']}','{$_SESSION['name']}',
-                '{$_SESSION['email']}','{$_SESSION['mobilenum']}',
-                '{$_SESSION['payment']}')";
-                $result = mysqli_query($conn, $query);
-                if (!$result){
-                    echo "Insert 3 failed";
-                }
-                //send email
-                $to = 'f32ee@localhost';
-                $subject = 'Movie Ticket Booking Confirmation';
-                $message = "
-                Dear Customer ,
-                Your ticket booking has been confirmed . The booking details
-                are as stated below :
-                BOOKING ID : ".$_SESSION['bookingID']."
-                Movie : ". $_SESSION['title']."
-                ".$_SESSION['hall']."
-                Date : ".$_SESSION['show-date']."
-                Time : ".$_SESSION['time']."
-                Seats : ".$seatsList."
-                
-                Thank you for patronising Illumnas Cinema .
-                
-                Yours sincerely , 
-                Illumnas Cinema";
-                $headers = 'From:illumnascinema@org.com';
-                mail($to,$subject,$message, $headers,'-f32ee@localhost');
-
+            if ($_SESSION['status']=='SUCCESS'){
                 echo "<div class='container'>";
                     echo "<div class='successbox'>";
                         echo "<h1><bold>PAYMENT SUCCESSFUL</bold></h1>";
@@ -164,7 +96,7 @@ text-decoration: none;
                             echo "<p>".$_SESSION['hall']."</p>";
                             echo "<p>Date : ".$_SESSION['show-date']."</p>";
                             echo "<p>Time : ".$_SESSION['time']."</p>";
-                            echo "<p>Seats : ".$seatsList."</p>";
+                            echo "<p>Seats : ".$_SESSION['seatsList']."</p>";
                         echo "</div>";
                         echo "<p> Your ticket booking has been confirmed . An email acknowledgment have been sent to your registered email .Thank you for patronising Illumnas Cinema.</p>";
 

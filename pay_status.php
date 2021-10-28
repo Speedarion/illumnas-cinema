@@ -85,23 +85,10 @@ text-decoration: none;
                     $_SESSION['mobilenum']  = $_POST['mobilenum'];
                     $_SESSION['payment'] = $_POST['payment'];
                     $_SESSION['totalAmountPaid']=(float)$_POST['totalAmountPaid'];
-                    //function to generate bookingID
-                    $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    function generate_string($input, $len) {
-                    $input_length = strlen($input);
-                    $random_string = '';
-                    for($i = 0; $i < $len; $i++) {
-                        $random_character = $input[mt_rand(0, $input_length - 1)];
-                        $random_string .= $random_character;
-                    }
-                
-                    return $random_string;
-                    }
-                    //generate bookingID and store in session variable for next page use
-                    $_SESSION['bookingID'] = generate_string($permitted_chars, 6);
+
                 ?>
                 <h1><bold>SELECT PAYMENT STATUS TO PROCEED : </bold></H1>
-                <form method="post" action="finalpage.php">
+                <form method="post" action="finalupdate.php">
                     <input type="submit" id='status' name='status' class='successbutton' value="SUCCESS">
                     <input type="submit" name='status' class='errorbutton' value="ERROR"><br><br>
                 </form>
