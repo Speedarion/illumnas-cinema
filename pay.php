@@ -328,9 +328,7 @@ $_POST['empty']: array of selected seats -->
     </section>
     </div>
     <script type="text/javascript" src="validateForm.js"></script>
-    <script type="text/javascript">
-        validate();
-    </script>
+
     <br>
     <br>
     <?php include "footer.php" ?>
