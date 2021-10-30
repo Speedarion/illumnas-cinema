@@ -11,67 +11,73 @@
     <link rel="stylesheet" href="style.css">
 
 <style>
-.errorbox{
-    padding:25px;
-    width:550px;
-    height:100px;
-    background-color: #696969;
-    border : 2px solid black;
-    margin:auto;
-}
-.successbox{
-    padding:25px;
-    width:750px;
-    height:400px;
-    background-color: #696969;
-    border : 2px solid black;
-    margin:auto;
-    display:block;
-}
-.successbox h1{
-    text-align: center;
-}
-.img-container, .desc-container{
-        margin-left : 50px;
-        display:inline-block;
+    .wrapper{
+        height: 600px;
+    }
+    .container{
+        margin-top: 20px;
+    }
+    .errorbox{
+        padding:25px;
+        width:550px;
+        height:100px;
+        background-color: #696969;
+        border : 2px solid black;
+        margin:auto;
+    }
+    .successbox{
+        padding:25px;
+        width:750px;
+        height:400px;
+        background-color: #696969;
+        border : 2px solid black;
+        margin:auto;
+        display:block;
+    }
+    .successbox h1{
+        text-align: center;
+    }
+    .img-container, .desc-container{
+            margin-left : 50px;
+            display:inline-block;
+
+        }
+    .desc-container{
+        vertical-align: top;
+        margin-left: 50px;
+    }
+    .desc-container p{
+        font-size: 18px;
+    }
+    .homebutton {
+        padding:25px;
+        width:550px;
+        height:100px;
+        margin:auto;
 
     }
-.desc-container{
-    vertical-align: top;
-    margin-left: 50px;
-}
-.desc-container p{
-    font-size: 18px;
-}
-.homebutton {
-    padding:25px;
-    width:550px;
-    height:100px;
-    margin:auto;
+    .backtohome {background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%)}
+    .backtohome {
+        margin:25px 120px;
+        cursor:pointer;
+        font-size:20px;
+        font-weight: 900;
+        width :300px;
+        padding:5px 10px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        border-radius: 10px;
+        display: block;
+    }
 
-}
-.backtohome {background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%)}
-.backtohome {
-    margin:25px 120px;
-    cursor:pointer;
-    font-size:20px;
-    font-weight: 900;
-    width :300px;
-    padding:5px 10px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    border-radius: 10px;
-    display: block;
-}
-
-.backtohome:hover {
-background-position: right center; /* change the direction of the change here */
-color: #fff;
-text-decoration: none;
-}
+    .backtohome:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    }
          
 </style>
 </head>
@@ -94,11 +100,12 @@ text-decoration: none;
                             echo "<p><bold> BOOKING ID : ".$_SESSION['bookingID']."</bold></p>";
                             echo "<p>Movie : ". $_SESSION['title']."</h2>";
                             echo "<p>".$_SESSION['hall']."</p>";
-                            echo "<p>Date : ".$_SESSION['show-date']."</p>";
+                            $date = date('D, j M Y', strtotime($_SESSION['show-date']));
+                            echo "<p>Date : ".$date."</p>";
                             echo "<p>Time : ".$_SESSION['time']."</p>";
                             echo "<p>Seats : ".$_SESSION['seatsList']."</p>";
                         echo "</div>";
-                        echo "<p> Your ticket booking has been confirmed . An email acknowledgment have been sent to your registered email .Thank you for patronising Illumnas Cinema.</p>";
+                        echo "<p> Your ticket booking has been confirmed. An email acknowledgment have been sent to your registered email. Thank you for patronising Illumnas Cinema.</p>";
 
                     echo "</div>";
                     echo "<div class='homebutton'>";
@@ -113,7 +120,7 @@ text-decoration: none;
                 echo "<div class='container'>";
                     echo "<div class='errorbox'>";
                         echo "<h1><bold>PAYMENT UNSUCCESSFUL</bold></h1>";
-                        echo "<p> The payment process is unsuccessful . Please re-attempt booking . </p>";
+                        echo "<p> The payment process is unsuccessful. Please re-attempt booking. </p>";
                     echo "</div>";
                     echo "<div class='homebutton'>";
                         echo "<button id='home' type='button' class='backtohome' onclick=\"location.href='http://192.168.56.2/f32ee/illumnas-cinema/index.php'\">BACK TO HOME</button>";

@@ -27,7 +27,8 @@
         foreach($_SESSION['empty'] as $arr){
             array_push($seats,$arr);
             }
-        $_SESSION['seatsList'] = join(",",$seats);
+        $_SESSION['seatsList'] = join(", ",$seats);
+        $date = date('D, j M Y', strtotime($_SESSION['show-date']));
         //insert details into illumnasSeats
         //get corresponding hallID (using showID) first since it is not passed as session variables
         include 'dbconnect.php';
@@ -80,7 +81,7 @@
         BOOKING ID : ".$_SESSION['bookingID']."
         Movie : ". $_SESSION['title']."
         ".$_SESSION['hall']."
-        Date : ".$_SESSION['show-date']."
+        Date : ".$date."
         Time : ".$_SESSION['time']."
         Seats : ".$_SESSION['seatsList']."
         

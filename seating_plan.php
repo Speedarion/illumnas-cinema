@@ -278,7 +278,7 @@
             }
             $result -> free();
 
-            $occupied = array('C5', 'C6', 'C7', 'E1'); // remove this when table completes!!!
+            // $occupied = array('C5', 'C6', 'C7', 'E1'); // remove this when table completes!!!
             $s1 = array('A', 'B', 'C', 'D', 'E');
             $s2 = array('1', '2', '3', '4', '5', '6', '7', '8', '9', '', '10', '11', '12', '13', '14', '15', '16', '17', '18');            
         ?>

@@ -176,7 +176,8 @@ $_POST['empty']: array of selected seats -->
                                 <div class="desc-container">
                                     <h2 id="title"><?php echo $_SESSION['title']; ?></h2>
                                     <p><?php echo $_SESSION['hall'];?></p>
-                                    <p>Date: <?php echo $_SESSION['show-date'];?></p>
+                                    <?php $date = date('D, j M Y', strtotime($_SESSION['show-date'])); ?>
+                                    <p>Date: <?php echo $date;?></p>
                                     <p><?php echo $_SESSION['time'];?></p>
                                 </div>
                             </div>
@@ -226,7 +227,7 @@ $_POST['empty']: array of selected seats -->
                                         foreach($_POST['empty'] as $arr){
                                             array_push($seats,$arr);
                                             }
-                                        echo join(",",$seats);
+                                        echo join(", ",$seats);
 
                                         
                                         

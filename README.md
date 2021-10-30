@@ -7,9 +7,9 @@ EE4717 web design project to create a movie ticket booking system.
 - [x] Showtimes
 - [x] Movie Details
 - [x] Seating Plan
-- [ ] Payment Page
-- [ ] Payment Success/Error
-- [ ] Check Booking
+- [x] Payment Page
+- [x] Payment Success/Error
+- [x] Check Booking
 - [x] About Us
 
 ## Updates
@@ -22,11 +22,12 @@ EE4717 web design project to create a movie ticket booking system.
 * seating_plan.php requires $_POST['show-id'], $_POST['show-date'], $_POST['hall'], $_POST['time-btn'] (store showtime i.e. 09:00)
 
 ## SQL Schemas
-* Movies(<ins>MovieID</ins>, Title, Description, Cast, Director, Distributor, ReleaseDate, RunningTime, Language, Subtitles, Genre， Rating)
-* Showtimes(<ins>ShowID</ins>, *MovieID*, *HallID*, Date, StartTime, EndTime)
-* Halls(<ins>HallID</ins>, Name)
-* Seats(<ins>SeatID</ins>, *HallID*, *ShowID*, *BookingID*, Seat) //for occupied seats
-* Booking(<ins>BookingID</ins>, *ShowID*, NumberOfSeats, Timestamp)
-* Payment(<ins>PaymentID</ins>, *BookingID*, Amount, Name, Email, Phone, PaymentMethod)
+* Movies(<ins>movieID</ins>, title, description, cast, director, distributor, releaseDate, runningTime, language, subtitles, genre，rating)
+* Showtimes(<ins>showID</ins>, *movieID*, *hallID*, showDate, startTime)
+* Halls(<ins>HhallID</ins>, hallName)
+* Seats(<ins>seatID</ins>, *hallID*, *showID*, *bookingID*, seat) //for occupied seats
+* Booking(<ins>bookingID</ins>, *showID*, numSeats, bookingTime)
+* Payment(<ins>paymentID</ins>, *bookingID*, amountPaid, customerName, customerEmail, customerPhone, paymentType)
+* Price(ticketType, ticketPrice)
 
 

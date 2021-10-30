@@ -1,4 +1,3 @@
-<!-- To-Do: Implement PHP's Session to get the movie information -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,11 +96,6 @@
             color: white;
         }
         /* Links to Previous Pages */
-
-        /* Description */
-        /* .desc input[type="image"]{
-            display: inline-block;
-        } */
 
         .movie-rate{
             height: 30px;
@@ -388,47 +382,9 @@
                 echo "</div>";
             }            
             // var_dump($_SESSION); //for debug
-        ?>
+        ?>     
 
         
-
-        <!-- <div class="showtimes">
-            <h2 id="showtimes">SHOWTIMES</h2>
-
-            <table id="showtimes-table">
-                <tr>
-                    <th>DATE</th>
-                    <th>TIMING</th>
-                </tr>
-                <tr>
-                    <td>TODAY <br> 8-10-2021</td>
-                    <td>
-                        <form action="seating_plan.php">
-                            <input type="hidden" name="time" value="11:50">
-                            <input type="submit" name="time-btn" value="11:50">
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>SAT <br> 9-10-2021</td>
-                    <td>
-                        <form action="seating_plan.php">
-                            <input type="hidden" name="time" value="11:50">
-                            <input type="submit" name="time-btn" value="11:50">
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td>SUN <br> 10-10-2021</td>
-                    <td>
-                        <form action="seating_plan.php">
-                            <input type="hidden" name="time" value="11:50">
-                            <input type="submit" name="time-btn" value="11:50">
-                        </form>
-                    </td>
-                </tr>
-            </table>
-        </div> -->
     </div>
     
 

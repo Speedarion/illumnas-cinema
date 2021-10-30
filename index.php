@@ -107,6 +107,10 @@
             font-weight: bold;
             font-size: 30px;           
         }
+        .status-button:hover{
+            background-color: #ddd;
+            color: black;
+        }
 
         .movie-blocks{
             display: block;
@@ -300,51 +304,7 @@
 
                 <div id="now-showing">
                     <div class="movie-blocks">
-                        <ul>
-                            <!-- <li>
-                                <div class="movie-block">
-                                    <form action="movie.php" method="POST"></form>
-                                        <input type="hidden" name="movie-name" value="Dune">
-                                        <input type="image" class="poster" src="images/poster/Dune.jpg" alt="Dune"><br>                         
-                                        <p>Dune <img src="images/PG13.webp" alt="PG13" class="movie-rate"></p>                       
-                                        
-                                        <input type="submit" class="movie-button" name="movie-button" value="Buy Ticket">
-                                    </form>
-                                </div>                                
-                            </li>
-                            <li>
-                                <div class="movie-block">
-                                    <form action="movie.php" method="POST">
-                                        <input type="hidden" name="movie-name" value="Free Guy">
-                                        <input type="image" class="poster" src="images/poster/Free-Guy.jpg" alt="Free Guy"><br>          
-                                        <p>Free Guy <img src="images/PG13.webp" alt="PG13" class="movie-rate"></p>        
-                                                            
-                                        <input type="submit" class="movie-button" name="movie-button" value="Buy Ticket">
-                                    </form>
-                                </div>                      
-                            </li>
-                            <li>
-                                <div class="movie-block">
-                                    <form action="movie.php" method="POST">
-                                        <input type="hidden" name="movie-name" value="No Time To Die">
-                                        <input type="image" class="poster" src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die"><br>
-                                        <p>No Time To Die <img src="images/PG13.webp" alt="PG13" class="movie-rate"></p>     
-                                                         
-                                        <input type="submit" class="movie-button" name="movie-button" value="Buy Ticket">
-                                    </form>
-                                </div>                                
-                            </li>
-                            <li>
-                                <div class="movie-block">
-                                    <form action="movie.php" method="POST">
-                                        <input type="hidden" name="movie-name" value="Shang-Chi">                        
-                                        <input type="image" class="poster" src="images/poster/Shang-Chi.jpg" alt="Shang-Chi"><br>                                            
-                                        <p>Shang-Chi And The Legend Of The Ten Rings <img src="images/PG13.webp" alt="PG13" class="movie-rate"> </p>    
-                                                           
-                                        <input type="submit" class="movie-button" name="movie-button" value="Buy Ticket">
-                                    </form>
-                                </div>                                
-                            </li>                     -->
+                        <ul>                            
                             <?php
                                 for($i=0;$i<count($nowTitle);$i++){
                                     echo "<li>";
@@ -365,43 +325,7 @@
 
                 <div id="coming-soon">
                     <div class="movie-blocks">
-                        <ul>
-                            <!-- <li>                                
-                                <form action="movie.php" method="POST"></form>
-                                    <input type="hidden" name="movie-name" value="Dune">
-                                    <input type="image" src="images/poster/Dune.jpg" alt="Dune" height="450" width="300"><br>                         
-                                    <p>Dune</p>       
-                                    <img src="images/M18.webp" alt="PG13" class="movie-rate">                
-                                    <input type="submit" class="button" name="movie-button" value="Buy Ticket">
-                                </form>
-                            </li>
-                            <li>                        
-                                <form action="movie.php" method="POST">
-                                    <input type="hidden" name="movie-name" value="Free Guy">
-                                    <input type="image" src="images/poster/Free-Guy.jpg" alt="Free Guy" height="450" width="300"><br>          
-                                    <p>Free Guy</p>     
-                                    <img src="images/M18.webp" alt="PG13" class="movie-rate">                       
-                                    <input type="submit" class="button" name="movie-button" value="Buy Ticket">
-                                </form>
-                            </li>
-                            <li>
-                                <form action="movie.php" method="POST">
-                                    <input type="hidden" name="movie-name" value="No Time To Die">
-                                    <input type="image" src="images/poster/No-Time-To-Die.jpg" alt="No Time To Die" height="450" width="300"><br>
-                                    <p>No Time To Die</p> 
-                                    <img src="images/M18.webp" alt="PG13" class="movie-rate">                       
-                                    <input type="submit" class="button" name="movie-button" value="Buy Ticket">
-                                </form>
-                            </li>
-                            <li>
-                                <form action="movie.php" method="POST">
-                                    <input type="hidden" name="movie-name" value="Shang Chi">                        
-                                    <input type="image" src="images/poster/Shang-Chi.jpg" alt="Shang-Chi" height="450" width="300"><br>                                            
-                                    <p>Shang-Chi</p>         
-                                    <img src="images/M18.webp" alt="PG13" class="movie-rate">               
-                                    <input type="submit" class="button" name="movie-button" value="Buy Ticket">
-                                </form>
-                            </li>               -->
+                        <ul>                            
                             <?php
                                 for($i=0;$i<count($csTitle);$i++){
                                     echo "<li>";
