@@ -59,7 +59,10 @@
         }
             
   
-  
+        .time{
+            display: inline-block;
+            margin-right: 15px;
+        }
                  
         .time-btn{
             background-image: linear-gradient(to right, #000428 0%, #004e92  51%, #000428  100%);
@@ -252,9 +255,10 @@
                             $startTime = $showtimeData[2];
                             $hallName = $showtimeData[3];
                             $showDate = $showtimeData[4];
-                            echo "<form action='seating_plan.php' method='POST'>";
                             for($j=0;$j<count($startTime);$j++){
-                                    echo "<input type='hidden' name='show-id' value='" .$showID[$i]. "'>";  
+                                    echo "<div class='time'>";
+                                    echo "<form action='seating_plan.php' method='POST'>";
+                                    echo "<input type='hidden' name='show-id' value='" .$showID[$j]. "'>";  
                                     echo "<input type='hidden' name='movie-id' value='" .$nowID[$i]. "'>";                          
                                     echo "<input type='hidden' name='show-date' value='" .$showDate[$i]. "'>";
                                     echo "<input type='hidden' name='hall' value='" .$hallName[$i]. "'>";
@@ -268,8 +272,10 @@
                                     else{
                                         echo "<input type='submit' class='time-btn' name='time-btn' value='" .$time. "'>";    
                                     }
+                                    echo "</form>";
+                                    echo "</div>";
+
                             }                    
-                            echo "</form>";
                             echo "</div>";
                             echo "</div>";
                         }
@@ -296,21 +302,6 @@
         });
         }
         scrollToTopBtn.addEventListener("click", scrollToTop);
-        function setactive(element){
-            var datebox = document.getElementById(element)
-            datebox.style.backgroundColor = 'white';
-            /*const datebox = document.getElementByClass("datebox");
-            var elements = document.getElementsByClassName('datebox');
-            for (var i=0; i<elements.length; i++) {
-                today = new Date(new Date().getTime() + i*(24 * 60 * 60 * 1000));
-                today = today.toDateString();
-                date = today ;
-                document.write(today);
-                elements[i].value=date;
-            }*/
-            
-        }
-        //window.reload = setactive();
     </script>
 
 </body>
