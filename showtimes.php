@@ -32,12 +32,13 @@
             border-style:solid;
             background-color: #343a2d;
             height:75px;
-            width:150px;
+            width:175px;
             cursor:pointer;
             text-align: center;
             color: white ;
             text-decoration: none;
             font-size: 17px;
+            margin-right: 10px;
             }
 
         .datebox:hover {
@@ -220,12 +221,13 @@
                             echo "<tr>";
                             foreach ($uniqueDate as $arr){
                                 $timestamp = strtotime($arr);
-                                $day = date('D',$timestamp);
+                                $day = strtoupper(date('D',$timestamp));
+                                $display = strtoupper(date('j M Y',$timestamp));
                                 echo "<td>";?>
                                 <form method='POST' action="<?php echo $_SERVER["PHP_SELF"];?>">
                                 <?php
                                 echo "<input type='hidden' name='selectedDate' value='".$arr."'>";
-                                echo "<input type='submit' id='datebox' class='datebox' name='day' value='".$day." ".$arr."' >";
+                                echo "<input type='submit' id='datebox' class='datebox' name='day' value='".$day." ".$display."' >";
                                 echo "</form>";
                                 echo "</td>";
                             }
