@@ -327,7 +327,7 @@
     
         <?php 
             //  YYYY-MM-DD dates
-            $today = "2021-11-01";
+            $today = "2021-11-8";
             // $today = date('Y-m-d');
             $day1 = date('Y-m-d', strtotime($today. " +1 day")); //tomorrow
             $day2 = date('Y-m-d', strtotime($today. " +2 days")); //the day after tomorrow
@@ -345,13 +345,8 @@
                 // loop array $days
                 for($i=0;$i<count($days);$i++){
                     echo "<tr>";
-                    if ($i == 0){
-                        echo "<td>TODAY <br>" .$days[$i]. "</td>"; 
-                    }
-                    else{
-                        $dayofweek = date('D', strtotime($days[$i])); //get weekday
-                        echo "<td>$dayofweek <br> " .$days[$i]. "</td>";
-                    }
+                    $dayofweek = date('D', strtotime($days[$i])); //get weekday
+                    echo "<td>$dayofweek <br> " .$days[$i]. "</td>";
 
                     $query = "SELECT illumnasShowtimes.showID, illumnasShowtimes.startTime, illumnasHalls.hallName, illumnasShowtimes.showDate FROM illumnasShowtimes, illumnasHalls WHERE illumnasShowtimes.hallID=illumnasHalls.hallID AND movieID=" .$_SESSION['movie-id']. " AND showDate = '" .$days[$i]. "' ORDER BY illumnasShowtimes.startTime ASC";
                     $result = mysqli_query($conn, $query);
