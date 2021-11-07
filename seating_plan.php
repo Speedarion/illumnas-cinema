@@ -354,7 +354,7 @@
             </div>
             
             <button type="button" class="back link-btn" onclick="location.href='http://192.168.56.2/f32ee/illumnas-cinema/movie.php'">BACK</button>
-            <input class='next link-btn' type="submit" value="CONFIRM">
+            <input class='next link-btn' type="submit" value="CONFIRM" onclick="return checkTickets()">
         </form>
     </div>
 
@@ -395,6 +395,17 @@
                     adultEl.value = numAdult-n;
                 }
             }
+        }
+
+        function checkTickets(){
+            if (numEl.innerHTML == 0){
+                alert("Please select seats.");
+                return false;
+            }
+            else{
+                return true;
+            }
+
         }
         </script>
 </body>

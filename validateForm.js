@@ -36,7 +36,7 @@ function validate(input){
             // last extension must have 2 to 3 characters
             Value = email.value.trim();
             x = email.parentElement;           
-            regexp = /^[\w.-]+@(\w+\.){1,2}(\w){2,3}$/;
+            regexp = /^[\w.-]+@(\w+\.){1,2}([a-zA-Z]){2,3}$/;
             if (regexp.test(Value) == false){
                 email.style.borderColor = "red"
                 small = x.querySelector("small");
@@ -54,7 +54,7 @@ function validate(input){
 
         case "mobilenum":
             // minimum 8 digits , max 10 digits , no dashes
-            Value = mobileNum.value 
+            Value = mobileNum.value.trim();
             x = mobileNum.parentElement;  
             var validNumber = /^\d{8,10}$/;        
             if (validNumber.test(Value)== false){
